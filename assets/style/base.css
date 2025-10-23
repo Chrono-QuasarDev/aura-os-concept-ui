@@ -1,0 +1,93 @@
+/* -------------------- Base Styles -------------------- */
+:root {
+  /* FONT SIZES */
+  --font-sm: 1.2rem;
+  --font-base: 2rem;
+  --font-h5: 2rem;
+  --font-h4: 2.4rem;
+  --font-h3: 3rem;
+  --font-h2: 3.8rem;
+  --font-h1: 5rem;
+
+  /* FONT WEIGHT */
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  /* FONT FAMILY */
+  --font-family: 'Nunito', sans-serif;
+
+  /* LETTER SPACING */
+  --letter-spacing-tight: -2px;
+
+  /* LINE HEIGHT */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+
+  /* COLOR */
+  --primary-color: rgb(13, 214, 90);
+  --secondary-color: #005add;
+  --black: #000;
+  --gray: #333;
+  --white: #fff;
+
+  /* UTILITIES */
+  --span-color: linear-gradient(to bottom right, #005add, #0dd65a);
+  --box-shadow: box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: var(--line-height-normal);
+  background: var(--black);
+  color: var(--white);
+}
+
+h1 {
+  font-size: var(--font-h1);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
+}
+
+h2 {
+  font-size: var(--font-h2);
+}
+
+h3 {
+  font-size: var(--font-h3);
+}
+
+h4 {
+  font-size: var(--font-h4);
+}
+
+p, a, ul {
+  font-size: var(--font-base);
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+span {
+  display: inline-block;
+  background-image: var(--span-color);
+  background-clip: text;
+  color: transparent;
+}
+
+.page-wrapper {
+  width: min(1200px, 95%);
+  margin: auto;
+}

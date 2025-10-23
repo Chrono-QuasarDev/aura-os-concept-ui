@@ -1,0 +1,91 @@
+/* --------- HEADER ---------- */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  height: 8rem;
+}
+
+.header__logo a,
+.header__nav a {
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-base);
+  font-weight: bold;
+}
+
+.header__logo a:first-child {
+  display: flex;
+}
+
+.header__logo img {
+  width: 3rem;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.header__nav a {
+  font-weight: 500;
+  padding: 0.5rem 2rem;
+  border-radius: 50px;
+  transition: all 0.7s ease;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: black;
+}
+
+.header__nav a:nth-child(3) {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#000, #000) padding-box,
+    linear-gradient(to bottom right, #005add, #0dd65a) border-box;
+
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  transition: all 0.7s ease;
+}
+
+.navbar-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 20px;
+  height: 3px;
+  margin: 5px auto;
+  background: #fff;
+  transition: all 0.5s ease;
+}
+

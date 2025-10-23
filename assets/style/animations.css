@@ -1,0 +1,165 @@
+/* ---------- Animations ---------- */
+/* This part containes the style for both the animations and the media queries for responsiveness */
+
+.autoShow > *{
+  animation: text-appear 1s ease-in-out both;
+  animation-delay: calc(var(--d, 0) * 0.2s);
+}
+
+.autoShow > *:nth-child(1) {
+  animation-name: text-appear-up;
+}
+
+.autoShow > *:nth-child(2) {
+  animation-name: text-appear-left;
+}
+
+.autoShow > *:nth-child(2) {
+  animation-name: text-appear-left;
+}
+
+@keyframes text-appear {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes text-appear-up {
+  from { opacity: 0; transform: translateY(100px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes text-appear-left {
+  from { opacity: 0; transform: translateX(-100px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes text-appear-right {
+  from { opacity: 0; transform: translateX(100px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.blog,
+.blog::after,
+.imageReveal {
+  animation: imageReveal 1s ease-in-out both;
+}
+
+@keyframes imageReveal {
+  from {
+    opacity: 0;
+    scale: .95;
+    translate: 0 4rem;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+    background-color: var(--black);
+  }
+}
+
+/* ------------------------------------------------------------------- */
+/* MEDIA QUERIES  */
+
+@media (max-width: 880px) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .header__nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 300px;
+    padding: 5rem 1.5rem;
+    box-shadow: 0 10px 10px rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 99;
+  }
+
+  .header__nav.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: block;
+    z-index: 999;
+  }
+
+  .navbar-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .navbar-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .hero {
+    height: auto;
+  }
+
+  .features__list {
+    grid-template-columns: auto;
+  }
+
+  .showcase__gallery {
+    flex-direction: column;
+    gap: 10rem;
+  }
+
+  .footer__socials-container a{
+    height: 40px;
+    width: 40px;
+  }
+  .footer__logo {
+    margin: 0;
+  }
+}
+
+
+@media (max-width: 504px) {
+  html {
+    font-size: 50%;
+  }
+
+  body {
+    text-align: left;
+  }
+
+  .blog { text-align: left; }
+
+  .showcase__image {
+    width: 90%;
+  }
+
+  .footer__items {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .footer__logo {
+    margin-left: 0 !important;
+    justify-content: center; 
+  }
+
+  .footer__socials-container { 
+    margin-right: 0 !important;
+    justify-content: center; 
+  }
+}
